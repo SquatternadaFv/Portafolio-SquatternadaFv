@@ -1,0 +1,61 @@
+---
+// src/components/Projects.astro
+// Personaliza con tus proyectos
+const projects = [
+  {
+    title: "Módulo de créditos complementarios para el SIM",
+    tech: "Laravel, Node.js, PostgreSQL, Figama",
+    date: "2024",
+    description:
+      "Desarrollo de un módulo para la gestión de créditos complementarios en el Sistema Integral Modular del Instituto Tecnológico de Morelia.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Itmorelia.png",
+  },
+  {
+    title: "TeamSync - Sistema de Gestión de Tickets",
+    tech: "Vue, Vuetify, Figma, Node.js ",
+    date: "2025",
+    description:
+      "Sistema de gestión de tickets para equipos de trabajo, con funcionalidades de asignación de tareas, seguimiento de incidencias y reportes.",
+    logo: "https://www-cms.pipedriveassets.com/Kanban.png",
+  },
+  {
+    title: "Desarrollos internos para la compañia Cinépolis Corporativo Mx",
+    tech: "PeopleSoft, PeopleCode, Oracle DB, MySQL",
+    date: "2025 - Presente",
+    description:
+      "Participación en diversos desarrollos de procesos internos de Cinépolis Corporativo Mx.",
+    logo: "https://www.quadratin.com.mx/www/wp-content/uploads/2019/06/8PZrz5Ka.png",
+  },
+];
+---
+
+<section id="projects" class="py-20 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">
+      Proyectos Destacados
+    </h2>
+
+    <div class="relative border-l-4 border-indigo-500 pl-8 space-y-12">
+      {projects.map((project) => (
+        <div class="relative flex items-start gap-6">
+          <!-- Logo proyecto -->
+          <div class="flex-shrink-0">
+            <img
+              src={project.logo}
+              alt={project.title}
+              class="w-16 h-16 object-contain rounded-xl shadow-md transform transition duration-500 hover:scale-110 hover:-rotate-3"
+            />
+          </div>
+
+          <!-- Contenido -->
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-800">{project.title}</h3>
+            <p class="text-gray-600 font-medium">{project.tech}</p>
+            <span class="text-sm text-gray-500">{project.date}</span>
+            <p class="mt-2 text-gray-600">{project.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

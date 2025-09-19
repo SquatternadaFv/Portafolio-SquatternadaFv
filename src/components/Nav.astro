@@ -1,0 +1,33 @@
+---
+const navItems = [
+  { name: "Acerca de mí", href: "#about" },
+  { name: "Formación académica", href: "#education" },
+  { name: "Proyectos destacados", href: "#projects" },
+  { name: "Habilidades técnicas", href: "#skills" },
+  { name: "Contacto", href: "#contact" },
+];
+---
+
+<nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Título -->
+    <a 
+      href="#"
+      class="text-2xl font-extrabold text-indigo-600 tracking-wide hover:text-indigo-700 transition"
+    >
+    SquatternadaFv
+    </a>
+
+    <!-- Links -->
+    <div class="hidden md:flex space-x-8">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-300"
+        >
+          {item.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

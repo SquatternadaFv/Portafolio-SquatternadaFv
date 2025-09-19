@@ -1,0 +1,61 @@
+---
+// src/components/Education.astro
+// Personaliza con tus estudios
+const studies = [
+  {
+    title: "Ingeniería en Sistemas Computacionales",
+    place: "Instituto Tecnológico de Morelia",
+    date: "2022 - Actualidad",
+    description:
+      "Actualmente en proceso de formación en desarrollo de software, redes y gestión de proyectos tecnológicos.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Itmorelia.png", 
+  },
+  {
+    title: "Bachillerato quimico-biológico",
+    place: "Escuela Preparatoria José Vasconcelos",
+    date: "2019 - 2022",
+    description:
+      "Orientado en ciencias biológicas y químicas, donde desarrollé habilidades analíticas y de resolución de problemas.",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEdRsI6nu1Vk3_qorcXh-3AF-BwH26_9Ygg&s",
+  },
+  {
+    title: "Inglés Avanzado nivel B2",
+    place: "CLE Morelia",
+    date: "2014 - 2025",
+    description:
+      "Certificación en inglés avanzado, con un enfoque en la comunicación efectiva y comprensión de textos complejos.",
+    logo: "https://sim-cle.morelia.tecnm.mx/images/logo_escuela.png",
+  },
+];
+---
+
+<section id="education" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">
+      Formación Académica
+    </h2>
+
+    <div class="relative border-l-4 border-indigo-500 pl-8 space-y-12">
+      {studies.map((study) => (
+        <div class="relative flex items-start gap-6">
+          <!-- Logo institución -->
+          <div class="flex-shrink-0">
+            <img 
+              src={study.logo} 
+              alt={study.place}
+              class="w-16 h-16 object-contain rounded-xl shadow-md transform transition duration-500 hover:scale-110 hover:-rotate-3"
+            />
+          </div>
+
+          <!-- Contenido -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">{study.title}</h3>
+            <p class="text-gray-600 font-medium">{study.place}</p>
+            <span class="text-sm text-gray-500">{study.date}</span>
+            <p class="mt-2 text-gray-600">{study.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

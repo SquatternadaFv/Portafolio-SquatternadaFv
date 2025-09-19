@@ -1,0 +1,116 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+  { name: "Inicio", href: "#home" },
+  { name: "Sobre mí", href: "#about" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Habilidades", href: "#skills" },
+  { name: "Educación", href: "#education" },
+  { name: "Contacto", href: "#contact" }
+];
+
+// Ejemplo de resultados en torneos
+const tops = [
+  { place: "Top 138", event: "Hype Cup 2023 Week 3", region: "NAE" },
+  { place: "Top 150", event: "Trio hype nite week 5", region: "NAW" },
+  { place: "Top 17", event: "Trio daily cup week 5", region: "NAE" }
+];
+---
+
+<footer class="bg-gradient-to-b from-slate-900 to-black text-white relative overflow-hidden">
+  <!-- Elementos decorativos -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-2000"></div>
+  </div>
+
+  <!-- Línea decorativa superior -->
+  <div class="w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+
+  <div class="max-w-6xl mx-auto px-6 py-16 relative z-10">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-12">
+      
+      <!-- Información personal -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
+          EPIC: flc squattayson!
+        </h3>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          Integrador de AI en desarrollo web. Apasionado por crear soluciones innovadoras y eficientes que transformen ideas en realidades digitales.
+          Profe por favor, estoy aprendiendo poco a poco, obviamente use AI, pero estoy aprendiendo poco a poco, deme chance.
+          Saque unos fortnitecitos soy bueno 🥷.
+        </p>
+      </div>
+
+      <!-- Navegación -->
+      <div class="space-y-6">
+        <h4 class="text-lg font-semibold mb-4 flex items-center gap-2">
+          <div class="w-1 h-6 bg-gradient-to-b from-blue-400 to-cyan-400 rounded-full"></div>
+          Navegación
+        </h4>
+        <ul class="space-y-3">
+          {quickLinks.map((link) => (
+            <li>
+              <a 
+                href={link.href}
+                class="text-gray-300 hover:text-white transition-all duration-300 flex items-center gap-2 group"
+              >
+                <div class="w-1 h-1 bg-gray-500 rounded-full group-hover:bg-purple-400 group-hover:w-2 transition-all duration-300"></div>
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Tops -->
+      <div class="space-y-6">
+        <h4 class="text-lg font-semibold mb-4 flex items-center gap-2">
+          <div class="w-1 h-6 bg-gradient-to-b from-pink-400 to-purple-400 rounded-full"></div>
+          Tops
+        </h4>
+        <ul class="space-y-3 text-gray-300">
+          {tops.map((t) => (
+            <li class="p-3 bg-white/10 border border-white/20 rounded-lg hover:bg-white/20 transition">
+              <span class="font-bold text-purple-400">{t.place}</span> — {t.event} <span class="text-sm text-gray-400">[{t.region}]</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Separador -->
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8"></div>
+
+    <!-- Parte inferior -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <p class="text-gray-400 text-sm">
+          © {currentYear} Eduardo Osvaldo Rodríguez Gutiérrez. Todos los derechos reservados.
+        </p>
+        <p class="text-gray-500 text-xs mt-1">
+          Hecho con ❤️, buenas intenciones y un poco de AI en Morelia
+        </p>
+      </div>
+
+      <!-- Scroll to top -->
+      <button 
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="group flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25"
+        aria-label="Volver arriba"
+      >
+        <svg class="w-5 h-5 text-white transition-transform group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <style>
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+  </style>
+</footer>

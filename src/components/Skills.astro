@@ -1,0 +1,242 @@
+---
+// src/components/Skills.astro
+// Personaliza con tus habilidades
+const frontendSkills = [
+  {
+    name: "React",
+    level: 90,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    color: "from-blue-400 to-cyan-400"
+  },
+  {
+    name: "JavaScript",
+    level: 85,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    color: "from-yellow-400 to-amber-400"
+  },
+  {
+    name: "Vue.js",
+    level: 80,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    color: "from-green-400 to-emerald-400"
+  },
+  {
+    name: "TypeScript",
+    level: 75,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    color: "from-blue-500 to-indigo-500"
+  },
+  {
+    name: "HTML5",
+    level: 95,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    color: "from-orange-400 to-red-400"
+  },
+  {
+    name: "CSS3",
+    level: 90,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    color: "from-blue-400 to-sky-400"
+  },
+  {
+    name: "Tailwind",
+    level: 85,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    color: "from-teal-400 to-cyan-400"
+  },
+  {
+    name: "Sass",
+    level: 70,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+    color: "from-pink-400 to-rose-400"
+  }
+];
+
+const backendSkills = [
+  {
+    name: "Node.js",
+    level: 80,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    color: "from-green-500 to-lime-500"
+  },
+  {
+    name: "PostgreSQL",
+    level: 85,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    color: "from-blue-400 to-yellow-400"
+  },
+  {
+    name: "PHP",
+    level: 95,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    color: "from-purple-400 to-indigo-400"
+  },
+  {
+    name: "MySQL",
+    level: 90,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    color: "from-blue-500 to-orange-400"
+  },
+  {
+    name: "MongoDB",
+    level: 65,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    color: "from-green-400 to-emerald-600"
+  },
+  {
+    name: "Express.js",
+    level: 75,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    color: "from-gray-600 to-gray-800"
+  },
+  {
+    name: "GitHub",
+    level: 75,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    color: "from-yellow-400 to-orange-500"
+  },
+  {
+    name: "Git",
+    level: 70,
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    color: "from-orange-500 to-red-500"
+  }
+];
+---
+
+<section id="skills" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-16 text-center">
+      Habilidades Técnicas
+    </h2>
+
+    <div class="grid lg:grid-cols-2 gap-16">
+      <!-- Frontend Skills -->
+      <div class="space-y-8">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            Frontend
+          </h3>
+          <p class="text-gray-600">Interfaz de usuario y experiencia</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          {frontendSkills.map((skill) => (
+            <div class="group">
+              <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 hover:border-transparent">
+                <!-- Logo animado -->
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      class="w-12 h-12 transform transition-all duration-700 group-hover:scale-125 group-hover:rotate-12"
+                    />
+                    <div class={`absolute inset-0 rounded-full bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
+                  </div>
+                </div>
+
+                <!-- Nombre -->
+                <h4 class="text-lg font-semibold text-gray-800 text-center mb-3">
+                  {skill.name}
+                </h4>
+
+                <!-- Barra de progreso -->
+                <div class="relative">
+                  <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div 
+                      class={`h-full bg-gradient-to-r ${skill.color} rounded-full transform origin-left transition-all duration-1000 group-hover:animate-pulse`}
+                      style={`width: ${skill.level}%; animation-delay: ${Math.random() * 500}ms`}
+                    ></div>
+                  </div>
+                  <span class="text-xs font-medium text-gray-500 mt-1 block text-right">
+                    {skill.level}%
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Backend Skills -->
+      <div class="space-y-8">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+              </svg>
+            </div>
+            Backend
+          </h3>
+          <p class="text-gray-600">Servidor y bases de datos</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          {backendSkills.map((skill) => (
+            <div class="group">
+              <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 hover:border-transparent">
+                <!-- Logo animado -->
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      class="w-12 h-12 transform transition-all duration-700 group-hover:scale-125 group-hover:rotate-12"
+                    />
+                    <div class={`absolute inset-0 rounded-full bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
+                  </div>
+                </div>
+
+                <!-- Nombre -->
+                <h4 class="text-lg font-semibold text-gray-800 text-center mb-3">
+                  {skill.name}
+                </h4>
+
+                <!-- Barra de progreso -->
+                <div class="relative">
+                  <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div 
+                      class={`h-full bg-gradient-to-r ${skill.color} rounded-full transform origin-left transition-all duration-1000 group-hover:animate-pulse`}
+                      style={`width: ${skill.level}%; animation-delay: ${Math.random() * 500}ms`}
+                    ></div>
+                  </div>
+                  <span class="text-xs font-medium text-gray-500 mt-1 block text-right">
+                    {skill.level}%
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating animation styles -->
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      .group:hover .animate-float {
+        animation: float 2s ease-in-out infinite;
+      }
+
+      @keyframes glow {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+
+      .animate-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+    </style>
+  </div>
+</section>
